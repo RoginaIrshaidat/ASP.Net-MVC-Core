@@ -1,0 +1,45 @@
+﻿@model hospital.Models.Doctor
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+
+<div>
+    <h4>Doctor</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DocName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DocName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DocImg)
+        </dt>
+        <dd class = "col-sm-10">
+                <img src="~/images/@Model.DocImg" style="height:50px; width:50px;">
+
+@*            @Html.DisplayFor(model => model.DocImg)
+*@        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Clinc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Clinc.ClincName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.DocId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+</body>
+</html>
